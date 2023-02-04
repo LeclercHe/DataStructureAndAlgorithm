@@ -8,7 +8,7 @@ PNode top = NULL;
 
 void Push(int x)
 {
-	PNode ptmp = (PNode)malloc(sizeof(PNode));
+	PNode ptmp = (PNode)malloc(sizeof(Node));
 	ptmp->data = x;
 	ptmp->next = top;
 	top = ptmp;
