@@ -7,7 +7,7 @@ struct BSTNode {
 	BSTNode* left;
 	BSTNode* right;
 };
-/*******************Method 1***********************/
+/******************************Method 1**********************************/
 bool IsSubtreeLesser(BSTNode* root,int data){
 	if (root == NULL) return true;
 	if (   root->data <= data
@@ -36,8 +36,8 @@ bool IsBinarySearchTree1(BSTNode* root) {
 	else
 		return false;
 }
-/*************************************************/
-/********************Method 2***********************/
+/*************************************************************************/
+/*******************************Method 2**********************************/
 bool IsBinarySearchTreeUnit(BSTNode* root,int min ,int max) {
 	if (root == NULL) return true;
 	if (   root->data > min
@@ -51,7 +51,7 @@ bool IsBinarySearchTreeUnit(BSTNode* root,int min ,int max) {
 bool IsBinarySearchTree2(BSTNode* root) {
 	return IsBinarySearchTreeUnit(root, INT_MIN, INT_MAX);
 }
-/*********************************************************/
+/*************************************************************************/
 BSTNode* GetNewNode(int data) {
 	BSTNode* ptemp = (BSTNode*)malloc(sizeof(BSTNode));
 	ptemp->data = data;
