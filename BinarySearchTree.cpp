@@ -41,6 +41,46 @@ bool Serach(PBSTNode root,int data)
 		return Serach(root->right, data);
 	}
 }
+int FindMin(PBSTNode root){
+	if (root == NULL) {
+		printf("tree is empty!\n");
+		return -1;
+	}
+	while (root->left != NULL) {
+		root = root->left;
+	}
+	return root->data;
+}
+int FindMinByRecursion(PBSTNode root){
+	if (root == NULL) {
+		printf("tree is empty!\n");
+		return -1;
+	}
+	else if (root->left == NULL) {
+		return root->data;
+	}
+	return FindMinByRecursion(root->left);
+}
+int FindMaxByRecursion(PBSTNode root) {
+	if (root == NULL) {
+		printf("tree is empty!\n");
+		return -1;
+	}
+	else if (root->right == NULL) {
+		return root->data;
+	}
+	return FindMinByRecursion(root->right);
+}
+int FindMax(PBSTNode root) {
+	if (root == NULL) {
+		printf("tree is empty!\n");
+		return -1;
+	}
+	while (root->right != NULL) {
+		root = root->right;
+	}
+	return root->data;
+}
 int main()
 {
 	PBSTNode proot = NULL;
@@ -55,5 +95,6 @@ int main()
 		printf("no found\n");
 	}
 	
+	printf("min = %d, max = %d", FindMinByRecursion(proot), FindMaxByRecursion(proot));
 	return 0;
 }
