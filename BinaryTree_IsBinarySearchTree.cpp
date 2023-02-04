@@ -40,8 +40,8 @@ bool IsBinarySearchTree1(BSTNode* root) {
 /*******************************Method 2**********************************/
 bool IsBinarySearchTreeUnit(BSTNode* root,int min ,int max) {
 	if (root == NULL) return true;
-	if (   root->data > min
-		&& root->data <= max
+	if (   root->data > min    /*Strictly less than*/
+		&& root->data < max
 		&& IsBinarySearchTreeUnit(root->left,min,root->data)
 		&& IsBinarySearchTreeUnit(root->right,root->data,max))
 		return true;
@@ -80,7 +80,7 @@ int main()
 	proot = Insert(proot, 50);
 	proot = Insert(proot, 200);
 	proot = Insert(proot, 60);
-	proot = Insert(proot, 51);
+	proot = Insert(proot, 550);
 	proot = Insert(proot, 33);
 	proot = Insert(proot, 1000);
 
