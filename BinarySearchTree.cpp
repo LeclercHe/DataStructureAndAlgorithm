@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<math.h>
 typedef struct BSTNode {
 	int data;
 	struct BSTNode* left;
@@ -80,6 +80,15 @@ int FindMax(PBSTNode root) {
 		root = root->right;
 	}
 	return root->data;
+}
+int max(int a, int b){
+	return a > b ? a : b;
+}
+int FindHeight(PBSTNode root) {
+	if (root == NULL) {
+		return -1;
+	}
+	return max(FindHeight(root->left), FindHeight(root->right)) + 1;
 }
 int main()
 {
